@@ -1,5 +1,4 @@
 // Array to Object [Part 1]
-
 function transformFirstAndLast(array) {
   var obj = {};
   var last = array.length -1;
@@ -12,8 +11,8 @@ function transformFirstAndLast(array) {
 transformFirstAndLast(['Queen', 'Elizabeth', 'Of Hearts', 'Beyonce']); // returns { Queen: 'Beyonce' }
 
 
-// Object to Array [Part 1]
 
+// Object to Array [Part 1]
 function getAllKeys(obj) {
   var keys = [];
   for (var key in obj) {
@@ -28,3 +27,15 @@ getAllKeys({
   hasPets : true
 }); //returns [ 'name', 'age', 'hasPets' ]
 
+
+
+// Array to Object [Part 2]
+function fromListToObject(array) {
+  var obj = {};
+  array.forEach(function(a) {
+      obj[a[0]] = a[1];
+  });
+  return obj;
+}
+
+fromListToObject([['make', 'Ford'], ['model', 'Mustang'], ['year', 1964]]); // returns { make: 'Ford', model: 'Mustang', year: 1964 }
