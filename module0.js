@@ -39,3 +39,21 @@ function fromListToObject(array) {
 }
 
 fromListToObject([['make', 'Ford'], ['model', 'Mustang'], ['year', 1964]]); // returns { make: 'Ford', model: 'Mustang', year: 1964 }
+
+
+
+// Object to Array [Part 2]
+function listAllValues(obj) {
+  var values = [];
+  for(var val in obj) {
+    var val = obj[val];
+    values.push(val);
+  }
+  return values;
+}
+
+ listAllValues({
+  name : 'Krysten',
+  age : 33,
+  hasPets : false
+}); // returns [ 'Krysten', 33, false ]
