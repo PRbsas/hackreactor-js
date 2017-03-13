@@ -46,7 +46,7 @@ fromListToObject([['make', 'Ford'], ['model', 'Mustang'], ['year', 1964]]); // r
 function listAllValues(obj) {
   var values = [];
   for(var val in obj) {
-    var val = obj[val];
+    val = obj[val];
     values.push(val);
   }
   return values;
