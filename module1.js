@@ -64,6 +64,8 @@ var myObj = {};
 addProperty(myObj, 'myProperty');
 console.log(myObj.myProperty); //sets new property on the given object with a value of true
 
+
+
 function removeProperty(obj, key) {
   delete obj[key];
 }
@@ -216,6 +218,8 @@ function isOdd(num) {
 
 var output = isOdd(9);
 console.log(output); //returns true
+
+
 
 function isSameLength(word1, word2) {
   if (word1.length === word2.length) {
