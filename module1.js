@@ -138,3 +138,92 @@ function isLessThan30(num) {
 
 var output = isLessThan30(9);
 console.log(output); //returns true
+
+
+
+function equalsTen(num) {
+  if (num === 10) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+var output = equalsTen(9);
+console.log(output); //returns false
+
+
+
+function isLessThan(num1, num2) {
+  if (num2 < num1) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+var output = isLessThan(9, 4);
+console.log(output); //returns true
+
+
+
+function isGreaterThan(num1, num2) {
+  if (num2 > num1) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+var output = isGreaterThan(11, 10);
+console.log(output); //returns false
+
+
+
+function isEqualTo(num1, num2) {
+  if (num1 === num2) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+var output = isEqualTo(11, 10);
+console.log(output); //returns false
+
+
+
+function isEven(num) {
+  if (num % 2 === 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+var output = isEven(11);
+console.log(output); //returns false
+
+
+
+function isOdd(num) {
+  if (num % 2 !== 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+var output = isOdd(9);
+console.log(output); //returns true
+
+function isSameLength(word1, word2) {
+  if (word1.length === word2.length) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+var output = isSameLength('words', 'super');
+console.log(output); //returns true
