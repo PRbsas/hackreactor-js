@@ -319,6 +319,8 @@ var input = [1,2,3,4,5];
 var output = computeAverageOfNumbers(input);
 console.log(output); // 3
 
+
+
 function getAverageOfElementsAtProperty(obj, key) {
   var array = obj[key];
   if (!(Array.isArray(array)) || array.length === 0) {
