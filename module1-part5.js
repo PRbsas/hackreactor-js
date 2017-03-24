@@ -171,6 +171,16 @@ console.log(output); //  {b: 1, a: 3, n: 2}
 
 
 
+function countCharacter(str, char) {
+  var count = str.split(char).length - 1;
+  return count;
+}
+
+var output = countCharacter('I am a hacker', 'a');
+console.log(output); // 3
+
+
+
 function getElementsGreaterThan10AtProperty(obj, key) {
   var array = obj[key];
   if (!(Array.isArray(array)) || array.length === 0) {

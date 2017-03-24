@@ -8,7 +8,7 @@ function transformFirstAndLast(array) {
   return obj;
 }
 
-transformFirstAndLast(['Queen', 'Elizabeth', 'Of Hearts', 'Beyonce']); // returns { Queen: 'Beyonce' }
+transformFirstAndLast(['Queen', 'Elizabeth', 'Of Hearts', 'Beyonce']); // { Queen: 'Beyonce' }
 
 
 
@@ -25,7 +25,7 @@ getAllKeys({
   name : 'Sam',
   age : 25,
   hasPets : true
-}); //returns [ 'name', 'age', 'hasPets' ]
+}); // [ 'name', 'age', 'hasPets' ]
 
 
 
@@ -38,7 +38,7 @@ function fromListToObject(array) {
   return obj;
 }
 
-fromListToObject([['make', 'Ford'], ['model', 'Mustang'], ['year', 1964]]); // returns { make: 'Ford', model: 'Mustang', year: 1964 }
+fromListToObject([['make', 'Ford'], ['model', 'Mustang'], ['year', 1964]]); // { make: 'Ford', model: 'Mustang', year: 1964 }
 
 
 
@@ -56,4 +56,89 @@ function listAllValues(obj) {
   name : 'Krysten',
   age : 33,
   hasPets : false
-}); // returns [ 'Krysten', 33, false ]
+}); // [ 'Krysten', 33, false ]
+
+
+
+// Array to Object [Part 3]
+function transformEmployeeData(array) {
+  return array.map(function(items) {
+    var obj = {};
+    items.map(function(a, index, items) {
+      obj[a[0]] = a[1];
+    });
+    return obj;
+  });
+}
+transformEmployeeData([
+    [
+        ['firstName', 'Joe'], ['lastName', 'Blow'], ['age', 42], ['role', 'clerk']
+    ],
+    [
+        ['firstName', 'Mary'], ['lastName', 'Jenkins'], ['age', 36], ['role', 'manager']
+    ]
+]); // [ { firstName: 'Joe', lastName: 'Blow', age: 42, role: 'clerk' }, { firstName: 'Mary', lastName: 'Jenkins', age: 36, role: 'manager' } ]
+
+
+
+// Object to Array [Part 3]
+function convertObjectToList(obj) {
+  var arr = [];
+  for (var key in obj) {
+    arr.push([key, obj[key]]);
+  }
+  return arr;
+}
+
+convertObjectToList({
+  name: 'Holly',
+  age: 35,
+  role: 'producer'
+}); // [ [ 'name', 'Holly' ], [ 'age', 35 ], [ 'role', 'producer' ] ]
+
+
+
+// Greeting
+var customerData = {
+  'Joe': {
+    visits: 1
+  },
+  'Carol': {
+    visits: 2
+  },
+  'Howard': {
+    visits: 3,
+  },
+  'Carrie': {
+    visits: 4
+  }
+};
+
+function greetCustomer(firstName) {
+  var greeting = '';
+
+  var person = customerData[firstName];
+  var visits = [];
+  for (var v in person) {
+    v = person[v];
+    visits.push(v);
+  }
+  if (person === undefined) {
+    greeting = 'Welcome! Is this your first time?';
+  }
+	if (visits == 1) {
+	  greeting = 'Welcome back, ' + firstName + '! We\'re glad you liked us the first time!';
+	} else if (visits > 1) {
+	  greeting = 'Welcome back, ' + firstName + '! So glad to see you again!';
+	}
+  return greeting;
+}
+
+var output = greetCustomer('Terrance');
+console.log(output); // 'Welcome! Is this your first time?'
+
+var output = greetCustomer('Joe');
+console.log(output); // --> 'Welcome back, Joe! We're glad you liked us the first time!'
+
+var output = greetCustomer('Carol');
+console.log(output); // --> 'Welcome back, Carol! So glad to see you again!'
